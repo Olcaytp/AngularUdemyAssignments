@@ -1,0 +1,18 @@
+<label>Server Name</label>
+
+<!--Dollar Sign Event, Passing and Using Data with Event Binding-->
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+
+<!--String Interpolation-->
+<p> {{serverName}} </p>
+
+<!--Property Binding & String Interpolation-->
+<p [innerText]="allowNewServer"></p>
+<p> {{allowNewServer}} </p>
+
+<!--Property Binding-->
+<!--Important Note: For events, you don't bind to onclick but only to click ( => (click))-->
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<p> {{serverCreationStatus}} </p>
+
+

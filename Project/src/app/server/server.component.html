@@ -2,5 +2,10 @@
 <!-- <p>{{'Server'}} with ID {{serverId}} is {{getServerStatus()}} </p> -->
 
 <!--ngStyle: Dynamically styling the elements and we use propery binding with this attribute directive to configure it-->
-<p [ngStyle]="{backgroundColor: getColor()}" >{{'Server'}} with ID {{serverId}} is {{getServerStatus()}} </p>
+<!-- <p [ngStyle]="{backgroundColor: getColor()}" >{{'Server'}} with ID {{serverId}} is {{getServerStatus()}} </p> -->
 
+<!--[ngClass]: Dynamically adding Css class with property binding to change element-->
+<p [ngStyle]="{backgroundColor: getColor()}"
+   [ngClass]="{online: serverStatus === 'online'}">
+   {{'Server'}} with ID {{serverId}} is {{getServerStatus()}}
+  </p>

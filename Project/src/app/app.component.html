@@ -58,8 +58,8 @@
   </div>
 </div> -->
 
-<!--Assignment3 ========> DataBindings <==============-->
-<div class="container">
+<!--3rd Assignment ========> DataBindings <==============-->
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <ol>
@@ -71,21 +71,58 @@
         <li>Starting at the 5th log item, give all future log items a blue background (via ngStyle)
           and white color (ngClass)</li>
       </ol>
-      <hr>
-      <!-- <button
-        class="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
-        <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
-        <p *ngIf="showSecret">Secret Password = tuna</p>
+      <hr> -->
+      <!-- <buttonclass="btn btn-primary" (click)="showSecret = !showSecret">Display Details</button> -->
+        <!-- <button class="btn btn-primary" (click)="onToggleDetails()">Display Details</button>
+        <p *ngIf="showSecret">Secret Password = tuna</p> -->
 
         <!--for the div under these lines
         [ngStyle]="{backgroundColor: logItem >= 5 ? 'blue' : 'transparent'}"
         [ngClass]="{'white-text': logItem >= 5}"
       -->
-        <div
+        <!-- <div
         *ngFor="let logItem of log, let i = index"
         [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
         [ngClass]="{'white-text': i >= 4}"
       >{{ logItem }}</div>
+    </div>
+  </div>
+</div> -->
+
+<!--Debugging Exercise: If you want to debug a code in Angular you should open developer tools and select source.
+Then in source folder, find the webpack, open webpack folder and find the file which you want to debug it.
+Then select the row and start the debugging-->
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>My Servers</h2>
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <br><br>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers; let i = index"
+          (click)="onRemoveServer(i)">{{ server }}</li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<!--@Input and @Output decorator and exercises-->
+<div class="container">
+  <app-cockpit
+  (serverCreated)="onServerAdded($event)"
+  (blueprintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-element
+      *ngFor="let serverElement of serverElements"
+      [srvElement]="serverElement"></app-server-element>
+      <!--In here we defined child property in child component with Input() decorator, thus tgis property took the
+      parent parameter from the app.component.ts (parent component). this is how component communicate with each other -->
+      <app-child [elmChild]="parent"> </app-child>
     </div>
   </div>
 </div>

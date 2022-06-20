@@ -9,6 +9,38 @@ export class AppComponent {
   username = '';
   showSecret = false;
   log: any = [];
+  servers: any =[];
+
+  parent="This data is of parent component";
+
+  serverElements = [
+    {type: 'server', name:'Testserver', content:'Just a Test!'}
+  ];
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+
+  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
+    });
+  }
+
+  // onAddServer() {
+  //   this.servers.push('Another Server');
+  // }
+
+  onRemoveServer(id: number) {
+    const position = id + 1;
+    this.servers.splice(position, 1);
+  }
 
   click() {
     return this.showSecret = true;

@@ -50,4 +50,12 @@ export class AppComponent {
     // this.log.push(this.log.length + 1);
     this.log.push(new Date());
   }
+
+  onChangeFirst() {
+    this.serverElements[0].name = 'Changed';
+  }
+
+  onDestroyFrist() {
+    this.serverElements.splice(0,1);
+  }
 }

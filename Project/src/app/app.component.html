@@ -117,9 +117,17 @@ Then select the row and start the debugging-->
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change First Element</button>
+      <button class="btn btn-danger" (click)="onDestroyFrist()">Destroy Element</button>
       <app-server-element
       *ngFor="let serverElement of serverElements"
-      [srvElement]="serverElement"></app-server-element>
+      [srvElement]="serverElement"
+      [name]="serverElement.name">
+      <p #contentParagraph>
+        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+        <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+      </p>
+    </app-server-element>
       <!--In here we defined child property in child component with Input() decorator, thus tgis property took the
       parent parameter from the app.component.ts (parent component). this is how component communicate with each other -->
       <app-child [elmChild]="parent"> </app-child>

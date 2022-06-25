@@ -10,6 +10,18 @@ export class AppComponent {
   showSecret = false;
   log: any = [];
   servers: any =[];
+  //4th Assignment------------------------------------------------
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
+
+  onIntervalFired(firedNumber: number) {
+    if (firedNumber % 2 === 0) {
+      this.evenNumbers.push(firedNumber);
+    } else {
+      this.oddNumbers.push(firedNumber);
+    }
+  }
+   //--------------------------------------------------------------
 
   parent="This data is of parent component";
 

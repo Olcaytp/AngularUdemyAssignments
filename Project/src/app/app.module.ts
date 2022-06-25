@@ -11,6 +11,9 @@ import { ServerComponent } from './server/server.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { ChildComponent } from './child/child.component';
+import { EvenComponent } from './even/even.component';
+import { GameControlComponent } from './game-control/game-control.component';
+import { OddComponent } from './odd/odd.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ChildComponent } from './child/child.component';
     ServerComponent,
     CockpitComponent,
     ServerElementComponent,
-    ChildComponent
+    ChildComponent,
+    EvenComponent,
+    GameControlComponent,
+    OddComponent
   ],
   imports: [
     BrowserModule,

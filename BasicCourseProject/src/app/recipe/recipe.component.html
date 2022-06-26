@@ -1,8 +1,14 @@
 <div class="row">
   <div class="col-md-5">
-    <app-recipelist></app-recipelist>
+    <app-recipelist (recipeWasSelected)="selectedRecipe = $event" ></app-recipelist>
   </div>
   <div class="col-md-7">
-    <app-recipedetail></app-recipedetail>
+    <!--here we send selectedRecipe details with [recipe] property to the recipe details so we can use
+    string interpolation there and selectedRecipe comes from the recipeitem.component.ts file-->
+    <app-recipedetail *ngIf ="selectedRecipe; else infoText"
+    [recipe] = "selectedRecipe"></app-recipedetail>
+    <ng-template #infoText >
+      <p>Please select a Recipe</p>
+    </ng-template>
   </div>
 </div>

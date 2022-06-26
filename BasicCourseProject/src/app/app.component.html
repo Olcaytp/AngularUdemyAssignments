@@ -1,9 +1,12 @@
-<app-header></app-header>
+<!--Adding Navigation with EventBinding and ngIf
+  We should add this onNavigate()methot with dollar sign event parameter to take the any data from the litenable methot in
+header component-->
+<app-header (featureSelected)="onNavigate($event)" ></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipe></app-recipe>
-      <app-shoppinglist></app-shoppinglist>
+      <app-recipe *ngIf="loadedFeature === 'recipe'"></app-recipe>
+      <app-shoppinglist *ngIf="loadedFeature !== 'recipe'"></app-shoppinglist>
     </div>
   </div>
 </div>

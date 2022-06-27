@@ -1,7 +1,7 @@
 <!--Adding Navigation with EventBinding and ngIf
   We should add this onNavigate()methot with dollar sign event parameter to take the any data from the litenable methot in
 header component-->
-<app-header (featureSelected)="onNavigate($event)" ></app-header>
+<!-- <app-header (featureSelected)="onNavigate($event)" ></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -9,4 +9,45 @@ header component-->
       <app-shoppinglist *ngIf="loadedFeature !== 'recipe'"></app-shoppinglist>
     </div>
   </div>
+</div> -->
+
+<!--Section-7 ===============> Directives Deep Dive <==============-->
+<!--ngIf & ngFor directives are structural directives-->
+<!--ngclass &ngStyle directives are attribute directives-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+          <li
+          class="list-group-item"
+          [ngClass]="{odd: odd % 2 !== 0}"
+          [ngStyle]="{backgroundColor: odd % 2 !== 0 ? 'blue' : 'red'}"
+          *ngFor="let odd of oddNumbers">
+        {{odd}}
+        </li>
+        </div>
+        <div *ngIf="!onlyOdd">
+          <li
+          [ngClass]="{odd: even % 2 !== 0}"
+        class="list-group-item"
+        *ngFor="let even of evenNumbers">
+      {{even}}
+      </li>
+        </div>
+      </ul>
+      <ng-template [ngIf]="onlyOdd">
+      </ng-template>
+    </div>
+  </div>
+  <!--AppBasicHiglight is atribute directive comes from basic-higlight folder and we added BasicHiglight declerations
+  to appmodule.ts file to use this directives. İt is used for changing element property we didnt use square brackets because
+we used in the basic-higlight.directive.ts file BetterHiglightDirective is better-->
+  <p AppBasicHiglight>This is BasicHighlight directive files</p>
+  <p appBetterHighlightS>This is BasicHighlight directive files</p>
+
 </div>

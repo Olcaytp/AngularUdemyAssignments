@@ -7,6 +7,11 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
   styleUrls: ['./shoppingedit.component.css']
 })
 export class ShoppingeditComponent implements OnInit {
+  //ViewChild bir decorator’ dür. Template’ de local Reference olarak tanımlanmış değerlere ulaşmamızı sağlar.
+  // Syntax;
+  // import { ViewChild, ElementRef } from '@angular/core';
+  // @ViewChild('localReferenceIsmi', {static: true}) localReferenceIsmi: ElementRef;
+
   @ViewChild('nameInput', {static: true}) nameInputRef: ElementRef;
   @ViewChild('amountInput', {static: true}) amountInputRef: ElementRef;
   @Output() ingredientAdded = new EventEmitter<Ingredient>();

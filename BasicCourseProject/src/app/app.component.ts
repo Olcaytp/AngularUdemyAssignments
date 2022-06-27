@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   loadedFeature: 'recipe';
 
+//Section-7 ===============> Directives Deep Dive <==============
+  numbers = [1, 2, 3, 4, 5];
+  oddNumbers = [1,3,5];
+  evenNumbers = [2,4];
+  onlyOdd = false;
+
   onNavigate(feature: any){
     this.loadedFeature = feature;
     //console.log('feature name:'+feature);

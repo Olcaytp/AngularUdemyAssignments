@@ -1,7 +1,7 @@
 <!--Adding Navigation with EventBinding and ngIf
   We should add this onNavigate()methot with dollar sign event parameter to take the any data from the litenable methot in
 header component-->
-<!-- <app-header (featureSelected)="onNavigate($event)" ></app-header>
+<app-header (featureSelected)="onNavigate($event)" ></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -9,12 +9,12 @@ header component-->
       <app-shoppinglist *ngIf="loadedFeature !== 'recipe'"></app-shoppinglist>
     </div>
   </div>
-</div> -->
+</div>
 
 <!--Section-7 ===============> Directives Deep Dive <==============-->
 <!--ngIf & ngFor directives are structural directives-->
 <!--ngclass &ngStyle directives are attribute directives-->
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <button
@@ -43,11 +43,16 @@ header component-->
       <ng-template [ngIf]="onlyOdd">
       </ng-template>
     </div>
-  </div>
+  </div> -->
   <!--AppBasicHiglight is atribute directive comes from basic-higlight folder and we added BasicHiglight declerations
   to appmodule.ts file to use this directives. İt is used for changing element property we didnt use square brackets because
 we used in the basic-higlight.directive.ts file BetterHiglightDirective is better-->
-  <p AppBasicHiglight>This is BasicHighlight directive files</p>
-  <p appBetterHighlightS>This is BasicHighlight directive files</p>
+  <!-- <p AppBasicHiglight>This is BasicHighlight directive files</p> -->
+  <!-- <p appBetterHighlightS [defaultColor]="'yellow'" [highlightColor]="'red'" >This is BasicHighlight directive files</p> -->
+  <!-- <p [appBetterHighlightS]="'red'" [defaultColor]="'yellow'">This is BasicHighlight directive files</p>
+</div> -->
 
-</div>
+<!-- Renderer example
+  <ul (click) = "onClick()" #animateThis>
+  <li>Click here to add new button</li>
+</ul> -->

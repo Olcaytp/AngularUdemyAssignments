@@ -1,0 +1,32 @@
+<!--Responsive with container, that is, according to the browser width,
+  the .container class determines the fixed width that our page will take.-->
+<div class="container">
+  <!--In the col-md-offset-2 definition, offset specifies how many grid spaces we will leave
+      from the edges.-->
+  <div class="row">
+      <!--With the col-sm-3 classes, we divide the 12-column row into 4 equal parts.
+        However, since we have added the sm class, the columns will be one after
+        the other at the resolution (576px) under small devices.-->
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <!--Yani tarayıcı genişliği;
+
+576px ve aşağısında mı (.xs)
+minimum 576px ve 768px aralığında mı (.sm)
+minimum 768px ve 992px aralığında mı (md)
+minimum 992px ve 1200px aralığında mı (lg)
+ya da 1200px ve üstünde mi (xl)
+** .xs sınıfı bootstrap 4 'de kullanılmamaktadır.
+
+media query kullanarak sayısal değerlerle uğraşmak yerine bootstrap 4 ile belirlenen ve her bir
+sayısal değere karşılık gelen class isimlerini kullanmak çok daha kolaydır. Bu class isimleri
+.xs (ekstra small), .sm (small), .md (medium), .lg (large) ve .xl (eksra large) sınıflarıdır.-->
+        <app-new-account (accountAdded) ="onAccountAdded($event)" ></app-new-account>
+        <hr>
+        <app-account
+        *ngFor="let acc of accounts; let i = index"
+        [account] = "acc"
+        [id] = "i"
+        (statusChanged) = "onStatusChanged($event)"></app-account>
+    </div>
+  </div>
+</div>

@@ -20,7 +20,10 @@ ya da 1200px ve üstünde mi (xl)
 media query kullanarak sayısal değerlerle uğraşmak yerine bootstrap 4 ile belirlenen ve her bir
 sayısal değere karşılık gelen class isimlerini kullanmak çok daha kolaydır. Bu class isimleri
 .xs (ekstra small), .sm (small), .md (medium), .lg (large) ve .xl (eksra large) sınıflarıdır.-->
-        <app-new-account (accountAdded) ="onAccountAdded($event)" ></app-new-account>
+        <!-- depency injection için account.service.ts i eklediğimiz için app.component.ts deki metotlarımızı yok ettik dolayısıyla
+          burdan da siliyoruz.
+          <app-new-account (accountAdded) ="onAccountAdded($event)" ></app-new-account> -->
+          <app-new-account></app-new-account>
         <hr>
         <app-account
         *ngFor="let acc of accounts; let i = index"

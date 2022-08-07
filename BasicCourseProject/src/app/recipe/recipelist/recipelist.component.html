@@ -9,7 +9,12 @@
     <!--Passing Recipe Data with Property Binding
     [recipe] is the prooperty we took recipes defines from the recipe.item.component -->
     <app-recipeitem *ngFor="let recipeEL of recipes"
-    [recipe] = "recipeEL"
-    (recipeSelected) = "onRecipeSelected(recipeEL)"></app-recipeitem>
+    [recipe] = "recipeEL"></app-recipeitem>
+
+    <!--  can go to the recipe list component and remove this listener
+      where we listened to whether we did select it or not,
+      we can get rid of the onRecipeSelected code and get rid of our own emitted event here -->
+     <!-- [recipe] = "recipeEL"
+    (recipeSelected) = "onRecipeSelected(recipeEL)"></app-recipeitem> -->
   </div>
 </div>

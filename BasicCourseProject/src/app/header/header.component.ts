@@ -6,12 +6,12 @@ import { Component, EventEmitter, Output } from "@angular/core";
 })
 
 export class HeaderComponent{
+  //we comment these lines bucause we no more use methots at the html file.
+  // @Output() featureSelected = new EventEmitter<string>();
 
-  @Output() featureSelected = new EventEmitter<string>();
-
-  onSelect(feature: string){
-    this.featureSelected.emit(feature);
-    //console.log('feature name:'+feature);
-  }
+  // onSelect(feature: string){
+  //   this.featureSelected.emit(feature);
+  //   //console.log('feature name:'+feature);
+  // }
 
 }

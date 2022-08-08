@@ -6,13 +6,16 @@
     -->
     <app-recipelist></app-recipelist>
   </div>
+
   <div class="col-md-7">
     <!--here we send selectedRecipe details with [recipe] property to the recipe details so we can use
     string interpolation there and selectedRecipe comes from the recipeitem.component.ts file-->
-    <app-recipedetail *ngIf ="selectedRecipe; else infoText"
+    <!-- i commented below due to using router-outlet -->
+    <!-- <app-recipedetail *ngIf ="selectedRecipe; else infoText"
     [recipe] = "selectedRecipe"></app-recipedetail>
     <ng-template #infoText >
       <p>Please select a Recipe</p>
-    </ng-template>
+    </ng-template> -->
+    <router-outlet></router-outlet>
   </div>
 </div>

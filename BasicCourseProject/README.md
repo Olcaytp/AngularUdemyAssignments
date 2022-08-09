@@ -1,6 +1,3 @@
-# Section11-12
-In these sections, I learned to switch between pages with routing. In the 12th chapter, I put into practice what I learned in the course core project.
-
 # BasicCourseProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.

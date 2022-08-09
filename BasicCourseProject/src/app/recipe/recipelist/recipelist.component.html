@@ -1,20 +1,25 @@
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-success">New Recipe</button>
+    <button class="btn btn-success" (click)="onNewRecipe()">New Recipe</button>
   </div>
 </div>
 <hr>
 <div class="row">
   <div class="col-xs-12">
+
     <!--Passing Recipe Data with Property Binding
     [recipe] is the prooperty we took recipes defines from the recipe.item.component -->
-    <app-recipeitem *ngFor="let recipeEL of recipes"
-    [recipe] = "recipeEL"></app-recipeitem>
+
+    <app-recipeitem
+    *ngFor="let recipeEL of recipes; let i = index"
+    [recipe] = "recipeEL"
+    [index] = "i"></app-recipeitem>
 
     <!--  can go to the recipe list component and remove this listener
       where we listened to whether we did select it or not,
       we can get rid of the onRecipeSelected code and get rid of our own emitted event here -->
      <!-- [recipe] = "recipeEL"
     (recipeSelected) = "onRecipeSelected(recipeEL)"></app-recipeitem> -->
+
   </div>
 </div>

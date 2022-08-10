@@ -1,17 +1,18 @@
+<!-- Section:12 ===============> Routing <============== -->
 <!--Adding Navigation with EventBinding and ngIf
   We should add this onNavigate()methot with dollar sign event parameter to take the any data from the litenable methot in
 header component-->
 <!-- <app-header (featureSelected)="onNavigate($event)" ></app-header> -->
-<app-header></app-header>
+<!-- <app-header></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12"> -->
       <!-- <app-recipe *ngIf="loadedFeature === 'recipe'"></app-recipe>
       <app-shoppinglist *ngIf="loadedFeature !== 'recipe'"></app-shoppinglist> -->
-      <router-outlet></router-outlet>
+      <!-- <router-outlet></router-outlet>
     </div>
   </div>
-</div>
+</div> -->
 
 <!--Section-7 ===============> Directives Deep Dive <==============-->
 <!--ngIf & ngFor directives are structural directives-->
@@ -58,3 +59,14 @@ we used in the basic-higlight.directive.ts file BetterHiglightDirective is bette
   <ul (click) = "onClick()" #animateThis>
   <li>Click here to add new button</li>
 </ul> -->
+
+
+<!-- Section:14 ===============> Observables <============== -->
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

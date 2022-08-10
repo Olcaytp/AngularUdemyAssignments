@@ -1,12 +1,15 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shoppinglist/shopping-list.service';
 import { Recipe } from './recipe.model';
 
 @Injectable()
 export class RecipeService{
-  recipeSelected = new EventEmitter<Recipe>();//1
+  // recipeSelected = new EventEmitter<Recipe>();//1
   /*eventemitter i ekledikten sonra bunu recipeitem.comp.ts e inject edeceğiz */
+
+  recipeSelected = new Subject<Recipe>()
 
   private recipes: Recipe[] = [
     new Recipe(

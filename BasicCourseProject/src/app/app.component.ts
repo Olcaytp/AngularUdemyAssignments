@@ -37,8 +37,8 @@ export class AppComponent {
   // }
   //-----------------------------------------------------------------
 
-  onNavigate(feature: any){
-    this.loadedFeature = feature;
-    //console.log('feature name:'+feature);
-  }
+  // onNavigate(feature: any){
+  //   this.loadedFeature = feature;
+  //   //console.log('feature name:'+feature);
+  // }
 }

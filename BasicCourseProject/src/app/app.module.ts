@@ -17,6 +17,7 @@ import { RecipedetailComponent } from './recipe/recipedetail/recipedetail.compon
 import { BetterHighlightDirective } from './better-higlight/better-highlight.directive';
 import { RecipeitemComponent } from './recipe/recipelist/recipeitem/recipeitem.component';
 import { ShoppingeditComponent } from './shoppinglist/shoppingedit/shoppingedit.component';
+import { RecipeService } from './recipe/recipe.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { ShoppingeditComponent } from './shoppinglist/shoppingedit/shoppingedit.
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

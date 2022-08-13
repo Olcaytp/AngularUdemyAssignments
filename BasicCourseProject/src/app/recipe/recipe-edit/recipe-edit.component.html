@@ -4,8 +4,11 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <button type="submit" class="btn btn-success">Save</button>
-          <button type="submit" class="btn btn-danger">Cancel</button>
+          <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!recipeForm.valid">Save</button>
+          <button type="submit" class="btn btn-danger" (click)="onCancel()">Cancel</button>
         </div>
       </div>
 
@@ -30,14 +33,15 @@
             type="text"
             id="imagePath"
             class="form-control"
-            formControlName="imagePath">
+            formControlName="imagePath"
+            #imagePath>
           </div>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-12">
-          <img src="" class="img-responsive">
+          <img [src]="imagePath.value" class="img-responsive">
         </div>
       </div>
 
@@ -61,7 +65,8 @@
           <div
           class="row"
           *ngFor="let ingredientCtrl of controls; let i = index"
-          [formGroupName]="i">
+          [formGroupName]="i"
+          style="margin-top: 10px;">
             <div class="col-xs-8">
               <input
             type="text"
@@ -78,8 +83,33 @@
             </div>
 
             <div class="col-xs-2">
-              <button class="btn btn-danger">X</button>
+              <button
+              type="button"
+              class="btn btn-danger"
+              (click)="onDeleteIngredient(i)">X</button>
             </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-xs-12">
+
+              <button
+              type="button"
+              class="btn btn-success"
+              (click)="onAddIngredient()"
+              style="margin-top: 10px;"
+              [disabled]="!recipeForm.valid">Add Ingredient</button>
+
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="onDeleteAll()"
+                style="margin-top: 10px; margin-left: 10px;"
+                [disabled]="!recipeForm.valid">Clear All</button>
+
+            </div>
+
           </div>
         </div>
       </div>

@@ -11,5 +11,10 @@ Operators which we add by using pipe method on the observable.
 Subjects that we can say better eventEmittter.
 Finally, we replaced eventEmitter with the Subjects at the Project.
 
-# Section:15 - What We Learned ?
+# Section:15-16 - What We Learned ?
 Handling Forms in Angular Apps with Templae Driven and Reactive Approach
+Validator, Custom Validators, Validation Patern
+Creating Template Driven or Reactive Approach Forms
+And lots of Usefull Things
+
+# Section:17 - What We Learned ?

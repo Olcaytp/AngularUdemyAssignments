@@ -45,3 +45,10 @@ What is pure & impure pipe
 Using Built-in Pipes (async pipe)
 
 # Section:18 - What We Learned ?
+Making Http Requests
+Backend (FireBase) Setup
+Sending & Getting Datas
+Using RxJS Operators to Transform Data
+Service for Http Requests
+Error Handling
+Interceptors

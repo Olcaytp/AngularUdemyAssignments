@@ -45,7 +45,7 @@ Creating Custom Pipe <br>
 What is pure & impure pipe <br>
 Using Built-in Pipes (async pipe)
 
-# Section:18 - What We Learned ?
+# Section:18-19 - What We Learned ?
 Making Http Requests <br>
 Backend (FireBase) Setup <br>
 Sending & Getting Datas <br>
@@ -53,3 +53,6 @@ Using RxJS Operators to Transform Data <br>
 Service for Http Requests <br>
 Error Handling <br>
 Interceptors
+Resolver
+
+# Section:20 - What We Learned ?

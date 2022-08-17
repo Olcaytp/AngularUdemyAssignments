@@ -11,35 +11,42 @@ export class RecipeService{
 
   recipeSelected = new Subject<Recipe>()
 
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Tasty Schnitzel',
-      'Crispy chicken for everyone!',
-      'https://i.nefisyemektarifleri.com/2020/10/17/tavuk-schnitzel.jpg',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('French Fries', 20)
-      ]),
-    new Recipe(
-      'Mexican Burger',
-      'Things could get dangerous and seriously delicious',
-      'https://simply-delicious-food.com/wp-content/uploads/2018/05/mexican-cheese-burgers-1.jpg',
-      [
-        new Ingredient('Buns', 2),
-        new Ingredient('Meat', 1)
-      ]),
-    new Recipe(
-      'Doner Kebap',
-      'A popular fast food dish, made of meat cooked on a vertical rotisserie',
-      'https://d17wu0fn6x6rgz.cloudfront.net/img/w/tarif/mgt/et_doner.webp',
-      [
-        new Ingredient('Meat', 1),
-        new Ingredient('sliced bread', 10)
-      ])
-  ];
+  //we no longer need this because of backend data service
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'Tasty Schnitzel',
+  //     'Crispy chicken for everyone!',
+  //     'https://i.nefisyemektarifleri.com/2020/10/17/tavuk-schnitzel.jpg',
+  //     [
+  //       new Ingredient('Meat', 1),
+  //       new Ingredient('French Fries', 20)
+  //     ]),
+  //   new Recipe(
+  //     'Mexican Burger',
+  //     'Things could get dangerous and seriously delicious',
+  //     'https://simply-delicious-food.com/wp-content/uploads/2018/05/mexican-cheese-burgers-1.jpg',
+  //     [
+  //       new Ingredient('Buns', 2),
+  //       new Ingredient('Meat', 1)
+  //     ]),
+  //   new Recipe(
+  //     'Doner Kebap',
+  //     'A popular fast food dish, made of meat cooked on a vertical rotisserie',
+  //     'https://d17wu0fn6x6rgz.cloudfront.net/img/w/tarif/mgt/et_doner.webp',
+  //     [
+  //       new Ingredient('Meat', 1),
+  //       new Ingredient('sliced bread', 10)
+  //     ])
+  // ];
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService){}
   recipesChanged = new Subject<Recipe[]>();
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     //slice method will simply return a new array which is an exact copy of the one in this service file.

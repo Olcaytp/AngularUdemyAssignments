@@ -1,20 +1,24 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor(private authService: AuthService) {}
   loadedFeature: 'recipe';
 
 //Section-7 ===============> Directives Deep Dive <==============
-  numbers = [1, 2, 3, 4, 5];
-  oddNumbers = [1,3,5];
-  evenNumbers = [2,4];
-  onlyOdd = false;//---------------------------------------------------
+  // numbers = [1, 2, 3, 4, 5];
+  // oddNumbers = [1,3,5];
+  // evenNumbers = [2,4];
+  // onlyOdd = false;
+//---------------------------------------------------
 
   //renderer examples-------------------------------------------
+
   //What is a renderer
   //The renderer is a built-in service provided by angular for us to perform UI rendering operations.
   //In the browser, rendering is the process of mapping a model to a view. The value of the model can be the
@@ -35,10 +39,16 @@ export class AppComponent {
   //   this.renderer.appendChild(this.animateThis.nativeElement, button);
 
   // }
+
   //-----------------------------------------------------------------
 
   // onNavigate(feature: any){
   //   this.loadedFeature = feature;
   //   //console.log('feature name:'+feature);
   // }
+  //-----------------------------------------------------------------
+
+  ngOnInit() {
+    this.authService.autoLogin();
+  }
 }

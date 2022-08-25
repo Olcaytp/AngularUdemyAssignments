@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicHighLightDirective } from './basic-highlight/basic-highlight.directive';
 
 
 import { AppComponent } from './app.component';
+import { AuthComponent } from './auth/auth.component';
+import { RecipeService } from './recipe/recipe.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { RecipeComponent } from './recipe/recipe.component';
@@ -19,7 +21,8 @@ import { RecipedetailComponent } from './recipe/recipedetail/recipedetail.compon
 import { BetterHighlightDirective } from './better-higlight/better-highlight.directive';
 import { RecipeitemComponent } from './recipe/recipelist/recipeitem/recipeitem.component';
 import { ShoppingeditComponent } from './shoppinglist/shoppingedit/shoppingedit.component';
-import { RecipeService } from './recipe/recipe.service';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { RecipeService } from './recipe/recipe.service';
     BetterHighlightDirective,
     DropdownDirective,
     RecipeEditComponent,
-    RecipeStartComponent
+    RecipeStartComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,15 @@ import { RecipeService } from './recipe/recipe.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService, RecipeService],
+  providers: [
+    ShoppingListService,
+    RecipeService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

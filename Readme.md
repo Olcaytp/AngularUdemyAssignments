@@ -72,3 +72,8 @@ Resolver
   Adding an Auth Guard
 
 # Section:21 Dynamic Components - What We Learned ? Related with =>
+
+Adding an Alert Modal Component
+ Using ngIf
+ Creating a Component Programmatically
+ Understanding entryComponents

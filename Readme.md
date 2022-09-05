@@ -71,9 +71,21 @@ Resolver
   Adding Logout
   Adding an Auth Guard
 
-# Section:21 Dynamic Components - What We Learned ? Related with =>
+# Section:21 Dynamic Components - What We Learned ? Related with => BasicCourseProject
 
 Adding an Alert Modal Component
  Using ngIf
  Creating a Component Programmatically
  Understanding entryComponents
+
+ # Section:22 Angular Modules & Optimizing Angular App - What We Learned ? Related with => BasicCourseProject
+
+ What are Modules?
+ Analyzing the AppModule
+ Splitting Modules Correctly
+ Adding an Auth Feature Module
+ Understanding Lazy Loading
+Preloading Lazy-Loaded Code
+Loading Services Differently
+
+# Section:23 Deploying an Angular App - What We Learned ? Related with => BasicCourseProject

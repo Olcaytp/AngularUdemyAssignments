@@ -51,6 +51,7 @@ import { Subscription } from 'rxjs';
 import { Ingredient } from './../shared/ingredient.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ShoppingListService } from './shopping-list.service';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-shoppinglist',
@@ -62,7 +63,7 @@ export class ShoppinglistComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
   private igChangedSub : Subscription;
 
-  constructor(private slService: ShoppingListService) { }
+  constructor(private slService: ShoppingListService, private loggingService: LoggingService) { }
 
   ngOnInit(): void {
     this.ingredients = this.slService.getIngredients();
@@ -72,6 +73,8 @@ export class ShoppinglistComponent implements OnInit, OnDestroy {
           this.ingredients = ingredients;
         }
       );
+
+      this.loggingService.printLog('Hello from ShoppingListComponent ngOnInit');
   }
 
   ngOnDestroy(): void {

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  username = '';
+  username = 'Olcay Tapan';
   showSecret = false;
   log: any = [];
   servers: any =[];

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { AuthService } from './auth/auth.service';
+import { LoggingService } from './logging.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,16 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private authService: AuthService) {}
-  loadedFeature: 'recipe';
+  constructor(private authService: AuthService,
+              private loggingService: LoggingService) { }
+
+ngOnInit() {
+    this.authService.autoLogin();
+    this.loggingService.printLog('Hello from AppComponent ngOnInit');
+  }
+}
+
+  //loadedFeature: 'recipe';
 
 //Section-7 ===============> Directives Deep Dive <==============
   // numbers = [1, 2, 3, 4, 5];
@@ -48,7 +57,4 @@ export class AppComponent implements OnInit {
   // }
   //-----------------------------------------------------------------
 
-  ngOnInit() {
-    this.authService.autoLogin();
-  }
-}
+

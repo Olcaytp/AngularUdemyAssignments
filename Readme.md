@@ -60,37 +60,37 @@ Resolver
 
 # Section:20 Authentication & Route Protection - What We Learned ? Related with => BasicCourseProject
 
- How Authentication Works
- Adding the Auth Page
- Handling Form Input
- Preparing the Backend
- Adding a Loading Spinner & Error Handling Logic
- Improving Error Handling
- Creating & Storing the User Data
-  Adding the Token to Outgoing Requests
-  Adding Logout
+ How Authentication Works<br>
+ Adding the Auth Page<br>
+ Handling Form Input<br>
+ Preparing the Backend<br>
+ Adding a Loading Spinner & Error Handling Logic<br>
+ Improving Error Handling<br>
+ Creating & Storing the User Data<br>
+  Adding the Token to Outgoing Requests<br>
+  Adding Logout<br>
   Adding an Auth Guard
 
 # Section:21 Dynamic Components - What We Learned ? Related with => BasicCourseProject
 
-Adding an Alert Modal Component
- Using ngIf
- Creating a Component Programmatically
+Adding an Alert Modal Component<br>
+ Using ngIf<br>
+ Creating a Component Programmatically<br>
  Understanding entryComponents
 
  # Section:22 Angular Modules & Optimizing Angular App - What We Learned ? Related with => BasicCourseProject
 
- What are Modules?
- Analyzing the AppModule
- Splitting Modules Correctly
- Adding an Auth Feature Module
- Understanding Lazy Loading
-Preloading Lazy-Loaded Code
+ What are Modules?<br>
+ Analyzing the AppModule<br>
+ Splitting Modules Correctly<br>
+ Adding an Auth Feature Module<br>
+ Understanding Lazy Loading<br>
+Preloading Lazy-Loaded Code<br>
 Loading Services Differently
 
 # Section:23 Deploying an Angular App - What We Learned ? Related with => BasicCourseProject
 
-Deployment Preparation & Steps
-Using Environment Variables
-Deployment Example: Firebase Hosting
+Deployment Preparation & Steps<br>
+Using Environment Variables<br>
+Deployment Example: Firebase Hosting<br>
 Server Routing vs Browser Routing

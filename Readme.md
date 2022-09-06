@@ -89,3 +89,8 @@ Preloading Lazy-Loaded Code
 Loading Services Differently
 
 # Section:23 Deploying an Angular App - What We Learned ? Related with => BasicCourseProject
+
+Deployment Preparation & Steps
+Using Environment Variables
+Deployment Example: Firebase Hosting
+Server Routing vs Browser Routing

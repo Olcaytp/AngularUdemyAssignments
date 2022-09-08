@@ -94,3 +94,13 @@ Deployment Preparation & Steps<br>
 Using Environment Variables<br>
 Deployment Example: Firebase Hosting<br>
 Server Routing vs Browser Routing
+
+# Section:24 Standalone Components - What We Learned ? Related with => standalone_project-finished
+
+Starting Setup & Why We Want Standalone Components<br>
+Building a First Standalone Component<br>
+A Standalone Root Component<br>
+Services & Standalone Components<br>
+Routing with Standalone Components<br>
+ Lazy Loading
+

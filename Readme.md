@@ -104,3 +104,11 @@ Services & Standalone Components<br>
 Routing with Standalone Components<br>
  Lazy Loading
 
+ # Section:25 Working with NgRx in our Project - What We Learned ? Related with => BasicCourseProject
+
+ What is Application State<br>
+ What is NgRx<br>
+ Reducer & Actions <br>
+ Dispatching Actions<br>
+ Adding-Updating-Deleting Actions<br>
+

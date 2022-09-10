@@ -84,6 +84,8 @@ import { HeaderComponent } from './header/header.component';
 import { BetterHighlightDirective } from './better-higlight/better-highlight.directive';
 import { CoreModule } from './core.module';
 import { LoggingService } from './logging.service';
+import { shoppingListReducer } from './shoppinglist/store/shopping-list.reducer';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -97,6 +99,7 @@ import { LoggingService } from './logging.service';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    StoreModule.forRoot({shoppingList: shoppingListReducer}),
     ShoppingListModule,
     SharedModule,
     CoreModule,

@@ -23,6 +23,7 @@ export class AuthInterceptorService implements HttpInterceptor {
     chain that in the end has this handle observable being returned because we swapped the user observable
     with that one in the map function here
     */
+
     return this.authService.user.pipe(
       take(1),
       exhaustMap(user => {

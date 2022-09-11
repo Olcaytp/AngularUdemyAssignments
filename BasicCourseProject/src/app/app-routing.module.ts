@@ -1,3 +1,4 @@
+/*
 //Before recipe.routing.module.ts---------------------------------------------------------------------------------------
 // import { NgModule } from '@angular/core';
 // import { AuthComponent } from './auth/auth.component';
@@ -46,6 +47,7 @@
 // export class AppRoutingModule {
 
 // }
+*/
 
 //Section22: Angular Modules & Optimizing Angular Apps -------------------------------------------------------------------
 

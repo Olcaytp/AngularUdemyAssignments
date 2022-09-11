@@ -4,7 +4,7 @@ import { AuthGuard } from '../auth/auth.guard';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { RecipeStartComponent } from './recipe-start/recipe-start.component';
 import { RecipeComponent } from './recipe.component';
-import { RecipedetailComponent } from './recipedetail/recipedetail.component';
+import { RecipedetailComponent } from './recipeDetail/recipedetail.component';
 import { RecipeResolverService } from './recipes-resolver.service';
 
 const routes: Routes = [
@@ -17,7 +17,8 @@ const routes: Routes = [
     { path: '', component: RecipeStartComponent },
     { path: 'new', component: RecipeEditComponent },
     {
-      path: ':id', component: RecipedetailComponent,
+      path: ':id',
+      component: RecipedetailComponent,
       resolve: [RecipeResolverService]
     },
     {

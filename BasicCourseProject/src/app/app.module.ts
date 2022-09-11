@@ -78,13 +78,12 @@ import { ShoppingListModule } from './shoppinglist/shopping-list.module';
 import { BasicHighLightDirective } from './basic-highlight/basic-highlight.directive';
 
 
+import { CoreModule } from './core.module';
 import { AppComponent } from './app.component';
+import { LoggingService } from './logging.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { BetterHighlightDirective } from './better-higlight/better-highlight.directive';
-import { CoreModule } from './core.module';
-import { LoggingService } from './logging.service';
-
 @NgModule({
   declarations: [
     AppComponent,

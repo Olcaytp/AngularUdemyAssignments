@@ -11,9 +11,12 @@ export interface State {
   editedIngredientIndex: number;
 }
 
+/* //I will actually remove that AppState interface here from the shopping list reducer because again, this
+is the wrong place for defining a global application-wide state,it should only define the state for this part of the global state
 export interface AppState {
   shoppingList: State;
 }
+*/
 
 const initialState = {
   ingredients: [new Ingredient('Apples', 5), new Ingredient('Tomatoes', 10)],

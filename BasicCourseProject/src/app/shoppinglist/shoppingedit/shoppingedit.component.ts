@@ -1,3 +1,4 @@
+import { appReducer } from './../../store/app.reducer';
 //Before Section 16------------------------------------------------------------
 // import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 // import { Ingredient } from 'src/app/shared/ingredient.model';
@@ -215,6 +216,7 @@ import { Component, OnInit } from '@angular/core';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import * as ShoppingListActions from '../store/shopping-list.actions';
 import * as fromShoppinglist from '../store/shopping-list.reducer';
+import * as fromApp from '../../store/app.reducer';
 
 
 @Component({
@@ -232,7 +234,9 @@ export class ShoppingeditComponent implements OnInit, OnDestroy {
 
   constructor(
     // private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>
-    private store: Store<fromShoppinglist.AppState>
+    //we added app.reducer.ts and changed the store type to fromApp.AppState
+    //private store: Store<fromShoppinglist.AppState>
+    private store: Store<fromApp.AppState>
     ) {
 
     }

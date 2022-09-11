@@ -69,6 +69,7 @@
 
 //Section22: Angular Modules & Optimizing Angular Apps -------------------------------------------------------------------
 import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
 import { FormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
@@ -78,14 +79,17 @@ import { ShoppingListModule } from './shoppinglist/shopping-list.module';
 import { BasicHighLightDirective } from './basic-highlight/basic-highlight.directive';
 
 
+import { CoreModule } from './core.module';
 import { AppComponent } from './app.component';
+import { LoggingService } from './logging.service';
+import { authReducer } from './auth/store/auth.reducer';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
-import { BetterHighlightDirective } from './better-higlight/better-highlight.directive';
-import { CoreModule } from './core.module';
-import { LoggingService } from './logging.service';
 import { shoppingListReducer } from './shoppinglist/store/shopping-list.reducer';
-import { StoreModule } from '@ngrx/store';
+import { BetterHighlightDirective } from './better-higlight/better-highlight.directive';
+import * as fromApp from './store/app.reducer';
+import { AuthEffects } from '../app/auth/store/auth.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -95,11 +99,17 @@ import { StoreModule } from '@ngrx/store';
     BetterHighlightDirective,
   ],
   imports: [
+    // because of the app.reducer.ts file, we don't need to import the reducers here
+    // StoreModule.forRoot({
+    //   shoppingList: shoppingListReducer,
+    //   auth: authReducer
+    // }),
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    StoreModule.forRoot({shoppingList: shoppingListReducer}),
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AuthEffects]),
     ShoppingListModule,
     SharedModule,
     CoreModule,

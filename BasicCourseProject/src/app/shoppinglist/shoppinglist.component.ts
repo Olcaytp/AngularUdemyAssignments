@@ -162,6 +162,7 @@ import { LoggingService } from '../logging.service';
 import { Store } from '@ngrx/store';
 import * as fromShoppinglist from './store/shopping-list.reducer';
 import * as ShoppinglistActions from './store/shopping-list.actions';
+import * as fromApp from '../store/app.reducer';
 
 @Component({
   selector: 'app-shoppinglist',
@@ -177,7 +178,9 @@ export class ShoppinglistComponent implements OnInit, OnDestroy {
     private loggingService: LoggingService,
     //we added this to use the ngrx store
     // private store: Store<{shoppingList: {ingredients: Ingredient[] } }>
-    private store: Store<fromShoppinglist.AppState>
+    //we added app.reducer.ts and changed the store type to fromApp.AppState
+    //private store: Store<fromShoppinglist.AppState>
+    private store: Store<fromApp.AppState>
     ) { }
 
 

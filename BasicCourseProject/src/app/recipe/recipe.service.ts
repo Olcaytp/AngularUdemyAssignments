@@ -89,7 +89,9 @@ import { EventEmitter, Injectable } from '@angular/core';
 //import { ShoppingListService } from '../shoppinglist/shopping-list.service';
 //let's import everything as shopping list actions, that name is up to you, from and now reach out to the shopping list area
 import * as ShoppingListActions from '../shoppinglist/store/shopping-list.actions';
-import * as fromShoppinglist from '../shoppinglist/store/shopping-list.reducer';
+/* we commented here because of app.reducer.ts
+import * as fromShoppinglist from '../shoppinglist/store/shopping-list.reducer';*/
+import * as fromApp from '../store/app.reducer';
 
 @Injectable()
 export class RecipeService{
@@ -131,7 +133,9 @@ export class RecipeService{
     //commented out because of ngrx
     //private slService: ShoppingListService,
     // private store: Store<{shoppingList: {ingredients: Ingredient[]}}>
-    private store: Store<fromShoppinglist.AppState>
+    //we added app.reducer.ts and changed the store type to fromApp.AppState
+    //private store: Store<fromShoppinglist.AppState>
+    private store: Store<fromApp.AppState>
   ){}
 
   recipesChanged = new Subject<Recipe[]>();

@@ -5,15 +5,16 @@ import {
   Router,
   UrlTree
 } from '@angular/router';
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Injectable } from '@angular/core';
 import { map, tap, take } from 'rxjs/operators';
 
 import { AuthService } from './auth.service';
-
+import * as fromApp from '../store/app.reducer';
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private store: Store<fromApp.AppState>) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -27,8 +28,14 @@ export class AuthGuard implements CanActivate {
     because this already is an observable, it's a subject and therefore also an observable, however not an observable
     that returns a boolean,instead it is an observable that in the end returns a user object but this can be fixed easily,
     we just add pipe and use the map operator which is imported from rxjs/operators to transform the observable value here. */
-      return this.authService.user.pipe(
+
+    //commented below line and added below line due to state management
+    // return this.authService.user.pipe(
+      return this.store.select('auth').pipe(
       take(1),
+      map(authState => {
+        return authState.user;
+      }),
       map(user => {
         const isAuth = !!user;
         if (isAuth) {

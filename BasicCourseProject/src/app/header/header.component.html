@@ -1,8 +1,8 @@
 <nav class="navbar navbar-default navbar-expand-sm ">
-  <div class="container-fluid">
+  <div class="container-fluid bg-img">
 
     <div class="navbar-header">
-      <a routerLink="/recipes"  class="navbar-brand">Recipe Book</a>
+      <a routerLink="/recipes"  class="navbar-brand" style="color: red;">Recipe Book</a>
     </div>
 
     <div class="collapse.navbar-collapse">
@@ -18,7 +18,7 @@
         </li>
 
         <li  routerLinkActive="active" *ngIf="!isAuthenticated">
-          <a routerLink="/auth">Authenticate</a>
+          <a routerLink="/auth" class="head-auth">Authenticate</a>
         </li>
 
         <li  routerLinkActive="active">

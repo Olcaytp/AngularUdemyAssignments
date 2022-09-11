@@ -5,7 +5,7 @@ import {
   HttpHandler,
   HttpParams
 } from '@angular/common/http';
-import { take, exhaustMap } from 'rxjs/operators';
+import { take, exhaustMap, map } from 'rxjs/operators';
 
 import { AuthService } from './auth.service';
 

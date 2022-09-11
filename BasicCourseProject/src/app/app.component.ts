@@ -1,5 +1,4 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { AuthService } from './auth/auth.service';
 import { LoggingService } from './logging.service';
 
@@ -9,8 +8,7 @@ import { LoggingService } from './logging.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private authService: AuthService,
-              private loggingService: LoggingService) { }
+  constructor(private authService: AuthService,private loggingService: LoggingService) { }
 
 ngOnInit() {
     this.authService.autoLogin();

@@ -80,7 +80,6 @@
 // After Section25: Ngrx State Management
 
 import { Subject } from 'rxjs';
-import { Store } from '@ngrx/store';
 import { Recipe } from './recipe.model'
 import { Ingredient } from '../shared/ingredient.model';
 import { EventEmitter, Injectable } from '@angular/core';
@@ -125,13 +124,7 @@ export class RecipeService{
   private recipes: Recipe[] = [];
 
   constructor(
-    //commented out because of ngrx
-    private slService: ShoppingListService,
-    // private store: Store<{shoppingList: {ingredients: Ingredient[]}}>
-    //we added app.reducer.ts and changed the store type to fromApp.AppState
-    //private store: Store<fromShoppinglist.AppState>
-    //private store: Store<fromApp.AppState>
-  ){}
+    private slService: ShoppingListService,){}
 
   recipesChanged = new Subject<Recipe[]>();
 

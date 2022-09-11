@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { AuthResponseData, AuthService } from './auth.service';
 import { AlertComponent } from '../shared/alert/alert.component';
 import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
-import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-auth',
@@ -19,7 +18,6 @@ export class AuthComponent implements OnDestroy {
   @ViewChild(PlaceholderDirective, {static: false}) alertHost: PlaceholderDirective;
 
   private closeSub: Subscription;
-  private storeSub: Subscription;
 
 
   constructor(private authService: AuthService,
@@ -153,8 +151,5 @@ export class AuthComponent implements OnDestroy {
       hostViewContainerRef.clear();
     });
   }
-}
-function ngOnInit() {
-  throw new Error('Function not implemented.');
 }
 

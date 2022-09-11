@@ -6,7 +6,6 @@ import {
   UrlTree
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 import { map, tap, take } from 'rxjs/operators';
 

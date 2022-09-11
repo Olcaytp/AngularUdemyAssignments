@@ -80,10 +80,11 @@ import { BasicHighLightDirective } from './basic-highlight/basic-highlight.direc
 
 import { CoreModule } from './core.module';
 import { AppComponent } from './app.component';
-import { LoggingService } from './logging.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { BetterHighlightDirective } from './better-higlight/better-highlight.directive';
+import { LoggingService } from './logging.service';
+
 @NgModule({
   declarations: [
     AppComponent,

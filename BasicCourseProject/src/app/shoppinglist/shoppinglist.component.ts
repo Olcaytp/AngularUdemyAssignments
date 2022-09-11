@@ -120,13 +120,14 @@ export class ShoppinglistComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.ingredients = this.slService.getIngredients();
     this.subscription = this.slService.ingredientsChanged
-      .subscribe(
-        (ingredients: Ingredient[]) => {
-          this.ingredients = ingredients;
-          console.log(this.ingredients);
-        }
+    .subscribe(
+      (ingredients: Ingredient[]) => {
+        this.ingredients = ingredients;
+        console.log(this.ingredients);
+      }
       );
-    this.loggingService.printLog('Hello from ShoppingListComponent ngOnInit');
+
+      this.loggingService.printLog('Hello from ShoppingListComponent ngOnInit');
   }
 
   onEditItem(index: number) {

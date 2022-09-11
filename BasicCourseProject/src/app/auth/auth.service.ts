@@ -1,4 +1,3 @@
-import { Store } from '@ngrx/store';
 import { Router } from "@angular/router";
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -23,8 +22,9 @@ export class AuthService {
  // user = new Subject<User>();
  user = new BehaviorSubject<User>(null);
  private tokenExpirationTimer: any;
-
- constructor(private http: HttpClient, private router: Router) {}
+  /**we will add auth ngrx states so commented below lines */
+  // constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
  signup(email: string, password: string) {
   return this.http

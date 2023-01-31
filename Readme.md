@@ -1,3 +1,9 @@
+# Angular FireBase Recipe Book
+<img
+  src="BasicCourseProject\src\assets\img\Recipe-Book.png"
+  alt="Apartment-Management-System"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 # Section:2-3 The Basics - What We Learned ? Related with => Project & BasicCourseProject
 Angular Basics <br>
 Creating a New Component <br>
